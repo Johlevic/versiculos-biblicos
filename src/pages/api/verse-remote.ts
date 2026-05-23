@@ -1,5 +1,6 @@
 import type { APIRoute } from "astro";
 import type { Lang, Mood } from "@/lib/domain/types";
+import { checkRateLimit, rateLimitHeaders } from "@/lib/server/rateLimiter";
 
 export const prerender = false;
 
@@ -116,12 +117,30 @@ function pickBibleId(lang: Lang): string {
     : (import.meta.env.PUBLIC_API_BIBLE_BID_EN ?? "");
 }
 
-export const GET: APIRoute = async ({ url }) => {
+const CSP = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; font-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data:; connect-src 'self' https://bible-api.com; frame-ancestors 'none'";
+const jsonHeaders = (extra: Record<string, string> = {}): Record<string, string> => ({
+  "content-type": "application/json",
+  "content-security-policy": CSP,
+  ...extra,
+});
+
+export const GET: APIRoute = async ({ url, clientAddress }) => {
+  const ip = clientAddress ?? "unknown";
+
+  const rl = checkRateLimit(ip);
+  const rlHdrs = rateLimitHeaders(ip);
+  if (!rl.allowed) {
+    return new Response(
+      JSON.stringify({ verse: null, reason: "rate-limited" }),
+      { status: 429, headers: jsonHeaders({ ...rlHdrs, "cache-control": "no-store" }) },
+    );
+  }
+
   const key = import.meta.env.API_BIBLE_KEY;
   if (!key) {
-    return new Response(JSON.stringify({ verse: null, reason: "missing-key" }), {
-      status: 200,
-      headers: { "content-type": "application/json" },
+    return new Response(JSON.stringify({ verse: null, reason: "unavailable" }), {
+      status: 503,
+      headers: jsonHeaders(rlHdrs),
     });
   }
 
@@ -130,8 +149,9 @@ export const GET: APIRoute = async ({ url }) => {
   const mood: Mood = ALLOWED_MOODS.includes(rawMood as Mood)
     ? (rawMood as Mood)
     : "all";
+  const avoidParam = (url.searchParams.get("avoid") ?? "").slice(0, 2000);
   const avoid = new Set(
-    (url.searchParams.get("avoid") ?? "")
+    avoidParam
       .split("||")
       .map((x) => x.trim().toLowerCase())
       .filter(Boolean),
@@ -140,10 +160,10 @@ export const GET: APIRoute = async ({ url }) => {
   const bibleId = pickBibleId(lang);
   if (!bibleId) {
     return new Response(
-      JSON.stringify({ verse: null, reason: "missing-bible-id" }),
+      JSON.stringify({ verse: null, reason: "unavailable" }),
       {
-        status: 200,
-        headers: { "content-type": "application/json" },
+        status: 503,
+        headers: jsonHeaders(rlHdrs),
       },
     );
   }
@@ -189,7 +209,7 @@ export const GET: APIRoute = async ({ url }) => {
             categories: [toCategoryKey(lang, mood)],
           },
         }),
-        { status: 200, headers: { "content-type": "application/json" } },
+        { status: 200, headers: jsonHeaders(rlHdrs) },
       );
     } catch {
       // ignore and continue trying other queries
@@ -230,7 +250,7 @@ export const GET: APIRoute = async ({ url }) => {
             categories: [toCategoryKey(lang, mood)],
           },
         }),
-        { status: 200, headers: { "content-type": "application/json" } },
+        { status: 200, headers: jsonHeaders(rlHdrs) },
       );
     } catch {
       // ignore and continue
@@ -239,8 +259,8 @@ export const GET: APIRoute = async ({ url }) => {
     }
   }
 
-  return new Response(JSON.stringify({ verse: null, reason: "no-candidate" }), {
-    status: 200,
-    headers: { "content-type": "application/json" },
+  return new Response(JSON.stringify({ verse: null, reason: "unavailable" }), {
+    status: 503,
+    headers: jsonHeaders(rlHdrs),
   });
 };

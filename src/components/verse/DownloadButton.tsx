@@ -53,12 +53,7 @@ function openImageForManualSave(url: string): boolean {
     a.remove();
     return true;
   } catch {
-    try {
-      window.location.href = url;
-      return true;
-    } catch {
-      return false;
-    }
+    return false;
   }
 }
 
@@ -118,19 +113,12 @@ export async function captureVerseBlobById(
   captureElementId: string
 ): Promise<Blob | null> {
   const el = document.getElementById(captureElementId);
-  if (!el) {
-    (window as Window & { __captureLastError?: string }).__captureLastError = "capture-root-not-found";
-    return null;
-  }
+  if (!el) return null;
 
   const node = el as HTMLElement;
   await new Promise<void>((resolve) => requestAnimationFrame(() => resolve()));
   const rect = node.getBoundingClientRect();
-  if (rect.width < 8 || rect.height < 8) {
-    (window as Window & { __captureLastError?: string }).__captureLastError =
-      `invalid-capture-size:${Math.round(rect.width)}x${Math.round(rect.height)}`;
-    return null;
-  }
+  if (rect.width < 8 || rect.height < 8) return null;
 
   if ("fonts" in document) {
     await document.fonts.ready;
@@ -185,9 +173,6 @@ export async function captureVerseBlobById(
     }
 
     console.warn("html-to-image capture failed", err);
-    (window as Window & { __captureLastError?: string }).__captureLastError = isRemoteCssSecurityError
-      ? "html-to-image-font-cors"
-      : "html-to-image-failed";
   }
 
   // Secondary fallback: html2canvas.
@@ -202,9 +187,7 @@ export async function captureVerseBlobById(
     return await canvasToPngBlob(canvas);
   } catch (err) {
     console.warn("html2canvas fallback failed", err);
-    (window as Window & { __captureLastError?: string }).__captureLastError = "html2canvas-failed";
   }
-  (window as Window & { __captureLastError?: string }).__captureLastError ??= "unknown-capture-failure";
   return null;
 }
 
@@ -268,12 +251,10 @@ export function DownloadButton({
         buildVerseImageFilename(verseRef)
       );
       if (!ok) {
-        const lastErr = (window as Window & { __captureLastError?: string }).__captureLastError;
-        if (lastErr) console.error("capture diagnostic:", lastErr);
         showToast(
           lang === "es"
-            ? `No se pudo generar la imagen (${lastErr ?? "error de captura"}).`
-            : `Could not generate image (${lastErr ?? "capture error"}).`,
+            ? "No se pudo generar la imagen."
+            : "Could not generate image.",
           "error"
         );
       }

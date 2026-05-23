@@ -4,42 +4,63 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
-const appJs = fs.readFileSync(path.join(root, "legacy", "app.js"), "utf8");
-const k = appJs.indexOf("const CURATED_VERSES = ");
-if (k === -1) throw new Error("CURATED_VERSES not found");
-const st = appJs.indexOf("{", k);
-let depth = 0;
-let i = st;
-for (; i < appJs.length; i++) {
-  const c = appJs[i];
-  if (c === "{") depth++;
-  else if (c === "}") {
-    depth--;
-    if (depth === 0) {
-      i++;
-      break;
+
+function extractEnglishVerses(source) {
+  const enMatch = source.match(/\ben\b\s*:\s*\{/);
+  if (!enMatch) throw new Error("English section not found in CURATED_VERSES");
+
+  const start = enMatch.index + enMatch[0].length - 1;
+  let depth = 0;
+  let i = start;
+  for (; i < source.length; i++) {
+    if (source[i] === "{") depth++;
+    else if (source[i] === "}") {
+      depth--;
+      if (depth === 0) break;
     }
   }
-}
-const objStr = appJs.slice(st, i);
-// eslint-disable-next-line no-new-func
-const CV = Function(`"use strict"; return (${objStr})`)();
-const en = CV.en;
-const verses = [];
-let n = 1;
-for (const [cat, arr] of Object.entries(en)) {
-  for (const v of arr) {
-    verses.push({
-      id: n++,
-      book: "",
-      chapter: 0,
-      verse: 0,
-      text: v.text,
-      ref: v.ref,
-      categories: [cat],
-    });
+
+  const enBlock = source.slice(start, i + 1);
+  const verseObjRegex = /\{\s*text:\s*"((?:[^"\\]|\\.)*)"\s*,\s*ref:\s*"((?:[^"\\]|\\.)*)"\s*\}/g;
+
+  const categories = ["comfort", "wisdom", "hope", "love", "repentance"];
+  const verses = [];
+  let id = 1;
+
+  for (const cat of categories) {
+    const catRegex = new RegExp(`\\b${cat}\\b\\s*:\\s*\\[`);
+    const catMatch = enBlock.match(catRegex);
+    if (!catMatch) continue;
+
+    const arrStart = enBlock.indexOf("[", catMatch.index);
+    let arrDepth = 0;
+    let j = arrStart;
+    for (; j < enBlock.length; j++) {
+      if (enBlock[j] === "[") arrDepth++;
+      else if (enBlock[j] === "]") {
+        arrDepth--;
+        if (arrDepth === 0) break;
+      }
+    }
+    const arrStr = enBlock.slice(arrStart, j + 1);
+    let m;
+    while ((m = verseObjRegex.exec(arrStr)) !== null) {
+      verses.push({
+        id: id++,
+        book: "",
+        chapter: 0,
+        verse: 0,
+        text: m[1],
+        ref: m[2],
+        categories: [cat],
+      });
+    }
   }
+  return verses;
 }
+
+const appJs = fs.readFileSync(path.join(root, "legacy", "app.js"), "utf8");
+const verses = extractEnglishVerses(appJs);
 const out = {
   metadata: {
     version: "1.0.0",

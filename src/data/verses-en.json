@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "language": "en",
     "translation": "Curated (KJV-style references)",
-    "total_verses": 244,
+    "total_verses": 75,
     "categories": {
       "comfort": "Comfort & peace",
       "wisdom": "Wisdom",
@@ -29,8 +29,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Yea, though I walk through the valley of the shadow of death, I will fear no evil: for thou art with me; thy rod and thy staff they comfort me.",
-      "ref": "Psalm 23:4",
+      "text": "Be still, and know that I am God.",
+      "ref": "Psalm 46:10",
       "categories": [
         "comfort"
       ]
@@ -51,7 +51,7 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Peace I leave with you, my peace I give unto you: not as the world giveth, give I unto you. Let not your heart be troubled, neither let it be afraid.",
+      "text": "Peace I leave with you, my peace I give unto you.",
       "ref": "John 14:27",
       "categories": [
         "comfort"
@@ -62,8 +62,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Casting all your care upon him; for he careth for you.",
-      "ref": "1 Peter 5:7",
+      "text": "In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
+      "ref": "John 16:33",
       "categories": [
         "comfort"
       ]
@@ -73,8 +73,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "God is our refuge and strength, a very present help in trouble.",
-      "ref": "Psalm 46:1",
+      "text": "The LORD is my light and my salvation; whom shall I fear?",
+      "ref": "Psalm 27:1",
       "categories": [
         "comfort"
       ]
@@ -84,8 +84,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "The LORD is nigh unto them that are of a broken heart; and saveth such as be of a contrite spirit.",
-      "ref": "Psalm 34:18",
+      "text": "The LORD is my strength and my shield; my heart trusted in him.",
+      "ref": "Psalm 28:7",
       "categories": [
         "comfort"
       ]
@@ -95,8 +95,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God: I will strengthen thee; yea, I will help thee; yea, I will uphold thee with the right hand of my righteousness.",
-      "ref": "Isaiah 41:10",
+      "text": "Yea, though I walk through the valley of the shadow of death, I will fear no evil.",
+      "ref": "Psalm 23:4",
       "categories": [
         "comfort"
       ]
@@ -106,8 +106,8 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Blessed be God, even the Father of our Lord Jesus Christ, the Father of mercies, and the God of all comfort; Who comforteth us in all our tribulation.",
-      "ref": "2 Corinthians 1:3-4",
+      "text": "The LORD is nigh unto them that are of a broken heart.",
+      "ref": "Psalm 34:18",
       "categories": [
         "comfort"
       ]
@@ -117,421 +117,14 @@
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "He healeth the broken in heart, and bindeth up their wounds.",
-      "ref": "Psalm 147:3",
+      "text": "Casting all your care upon him; for he careth for you.",
+      "ref": "1 Peter 5:7",
       "categories": [
         "comfort"
       ]
     },
     {
       "id": 11,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "When thou passest through the waters, I will be with thee; and through the rivers, they shall not overflow thee.",
-      "ref": "Isaiah 43:2",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 12,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The eternal God is thy refuge, and underneath are the everlasting arms.",
-      "ref": "Deuteronomy 33:27",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 13,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thou art my hiding place; thou shalt preserve me from trouble; thou shalt compass me about with songs of deliverance.",
-      "ref": "Psalm 32:7",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 14,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Wait on the LORD: be of good courage, and he shall strengthen thine heart: wait, I say, on the LORD.",
-      "ref": "Psalm 27:14",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 15,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I will not leave you comfortless: I will come to you.",
-      "ref": "John 14:18",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 16,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD is good, a strong hold in the day of trouble; and he knoweth them that trust in him.",
-      "ref": "Nahum 1:7",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 17,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Be strong and of a good courage, fear not, nor be afraid of them: for the LORD thy God, he it is that doth go with thee; he will not fail thee, nor forsake thee.",
-      "ref": "Deuteronomy 31:6",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 18,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He shall cover thee with his feathers, and under his wings shalt thou trust.",
-      "ref": "Psalm 91:4",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 19,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Weeping may endure for a night, but joy cometh in the morning.",
-      "ref": "Psalm 30:5",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 20,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Humble yourselves therefore under the mighty hand of God, that he may exalt you in due time: Casting all your care upon him; for he careth for you.",
-      "ref": "1 Peter 5:6-7",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 21,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For I the LORD thy God will hold thy right hand, saying unto thee, Fear not; I will help thee.",
-      "ref": "Isaiah 41:13",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 22,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thou wilt keep him in perfect peace, whose mind is stayed on thee: because he trusteth in thee.",
-      "ref": "Isaiah 26:3",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 23,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And we know that all things work together for good to them that love God, to them who are the called according to his purpose.",
-      "ref": "Romans 8:28",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 24,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD is my light and my salvation; whom shall I fear? the LORD is the strength of my life; of whom shall I be afraid?",
-      "ref": "Psalm 27:1",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 25,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He giveth power to the faint; and to them that have no might he increaseth strength.",
-      "ref": "Isaiah 40:29",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 26,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "My flesh and my heart faileth: but God is the strength of my heart, and my portion for ever.",
-      "ref": "Psalm 73:26",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 27,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For I am persuaded, that neither death, nor life, nor angels, nor principalities, nor powers, nor things present, nor things to come, Nor height, nor depth, nor any other creature, shall be able to separate us from the love of God, which is in Christ Jesus our Lord.",
-      "ref": "Romans 8:38-39",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 28,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "These things I have spoken unto you, that in me ye might have peace. In the world ye shall have tribulation: but be of good cheer; I have overcome the world.",
-      "ref": "John 16:33",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 29,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I sought the LORD, and he heard me, and delivered me from all my fears.",
-      "ref": "Psalm 34:4",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 30,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He will not suffer thy foot to be moved: he that keepeth thee will not slumber.",
-      "ref": "Psalm 121:3",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 31,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD upholdeth all that fall, and raiseth up all those that be bowed down.",
-      "ref": "Psalm 145:14",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 32,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He shall call upon me, and I will answer him: I will be with him in trouble; I will deliver him, and honour him.",
-      "ref": "Psalm 91:15",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 33,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But they that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles; they shall run, and not be weary; and they shall walk, and not faint.",
-      "ref": "Isaiah 40:31",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 34,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD also will be a refuge for the oppressed, a refuge in times of trouble.",
-      "ref": "Psalm 9:9",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 35,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Be careful for nothing; but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God. And the peace of God, which passeth all understanding, shall keep your hearts and minds through Christ Jesus.",
-      "ref": "Philippians 4:6-7",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 36,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I have set the LORD always before me: because he is at my right hand, I shall not be moved.",
-      "ref": "Psalm 16:8",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 37,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thy mercy, O LORD, is in the heavens; and thy faithfulness reacheth unto the clouds.",
-      "ref": "Psalm 36:5",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 38,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The name of the LORD is a strong tower: the righteous runneth into it, and is safe.",
-      "ref": "Proverbs 18:10",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 39,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The steps of a good man are ordered by the LORD: and he delighteth in his way. Though he fall, he shall not be utterly cast down: for the LORD upholdeth him with his hand.",
-      "ref": "Psalm 37:23-24",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 40,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Many are the afflictions of the righteous: but the LORD delivereth him out of them all.",
-      "ref": "Psalm 34:19",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 41,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "My soul, wait thou only upon God; for my expectation is from him. He only is my rock and my salvation: he is my defence; I shall not be moved.",
-      "ref": "Psalm 62:5-6",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 42,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Fear not, little flock; for it is your Father's good pleasure to give you the kingdom.",
-      "ref": "Luke 12:32",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 43,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And the Lord said, Simon, Simon, behold, Satan hath desired to have you, that he may sift you as wheat: But I have prayed for thee, that thy faith fail not: and when thou art converted, strengthen thy brethren.",
-      "ref": "Luke 22:31-32",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 44,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He will swallow up death in victory; and the Lord GOD will wipe away tears from off all faces.",
-      "ref": "Isaiah 25:8",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 45,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For God hath not given us the spirit of fear; but of power, and of love, and of a sound mind.",
-      "ref": "2 Timothy 1:7",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 46,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Behold, I have graven thee upon the palms of my hands; thy walls are continually before me.",
-      "ref": "Isaiah 49:16",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 47,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Call upon me in the day of trouble: I will deliver thee, and thou shalt glorify me.",
-      "ref": "Psalm 50:15",
-      "categories": [
-        "comfort"
-      ]
-    },
-    {
-      "id": 48,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -542,348 +135,106 @@
       ]
     },
     {
-      "id": 49,
+      "id": 12,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "The LORD is my rock, and my fortress, and my deliverer; my God, my strength, in whom I will trust; my buckler, and the horn of my salvation, and my high tower.",
-      "ref": "Psalm 18:2",
+      "text": "Blessed are they that mourn: for they shall be comforted.",
+      "ref": "Matthew 5:4",
       "categories": [
         "comfort"
       ]
     },
     {
-      "id": 50,
+      "id": 13,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "The fear of the LORD is the beginning of wisdom: and the knowledge of the holy is understanding.",
-      "ref": "Proverbs 9:10",
+      "text": "The LORD shall guide thee continually, and satisfy thy soul in drought.",
+      "ref": "Isaiah 58:11",
+      "categories": [
+        "comfort"
+      ]
+    },
+    {
+      "id": 14,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "As one whom his mother comforteth, so will I comfort you.",
+      "ref": "Isaiah 66:13",
+      "categories": [
+        "comfort"
+      ]
+    },
+    {
+      "id": 15,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "The God of all comfort; who comforteth us in all our tribulation.",
+      "ref": "2 Corinthians 1:3-4",
+      "categories": [
+        "comfort"
+      ]
+    },
+    {
+      "id": 16,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "Trust in the LORD with all thine heart; and lean not unto thine own understanding.",
+      "ref": "Proverbs 3:5",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 51,
+      "id": 17,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Trust in the LORD with all thine heart; and lean not unto thine own understanding. In all thy ways acknowledge him, and he shall direct thy paths.",
-      "ref": "Proverbs 3:5-6",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 52,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For wisdom is better than rubies; and all the things that may be desired are not to be compared to it.",
-      "ref": "Proverbs 8:11",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 53,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The fear of the LORD is the beginning of knowledge: but fools despise wisdom and instruction.",
+      "text": "The fear of the LORD is the beginning of wisdom.",
       "ref": "Proverbs 1:7",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 54,
+      "id": 18,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "A wise man will hear, and will increase learning; and a man of understanding shall attain unto wise counsels.",
-      "ref": "Proverbs 1:5",
+      "text": "Take therefore no thought for the morrow.",
+      "ref": "Matthew 6:34",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 55,
+      "id": 19,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "How much better is it to get wisdom than gold! and to get understanding rather to be chosen than silver!",
-      "ref": "Proverbs 16:16",
+      "text": "Blessed are the pure in heart: for they shall see God.",
+      "ref": "Matthew 5:8",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 56,
+      "id": 20,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.",
-      "ref": "James 1:5",
+      "text": "Keep thy heart with all diligence; for out of it are the issues of life.",
+      "ref": "Proverbs 4:23",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 57,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that walketh with wise men shall be wise: but a companion of fools shall be destroyed.",
-      "ref": "Proverbs 13:20",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 58,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The tongue of the wise useth knowledge aright: but the mouth of fools poureth out foolishness.",
-      "ref": "Proverbs 15:2",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 59,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that is slow to anger is better than the mighty; and he that ruleth his spirit than he that taketh a city.",
-      "ref": "Proverbs 16:32",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 60,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A soft answer turneth away wrath: but grievous words stir up anger.",
-      "ref": "Proverbs 15:1",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 61,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Pride goeth before destruction, and an haughty spirit before a fall.",
-      "ref": "Proverbs 16:18",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 62,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that covereth a transgression seeketh love; but he that repeateth a matter separateth very friends.",
-      "ref": "Proverbs 17:9",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 63,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Even a fool, when he holdeth his peace, is counted wise: and he that shutteth his lips is esteemed a man of understanding.",
-      "ref": "Proverbs 17:28",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 64,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A man's gift maketh room for him, and bringeth him before great men.",
-      "ref": "Proverbs 18:16",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 65,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The spirit of a man will sustain his infirmity; but a wounded spirit who can bear?",
-      "ref": "Proverbs 18:14",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 66,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that hath knowledge spareth his words: and a man of understanding is of an excellent spirit.",
-      "ref": "Proverbs 17:27",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 67,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A fool uttereth all his mind: but a wise man keepeth it in till afterwards.",
-      "ref": "Proverbs 29:11",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 68,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Be not wise in thine own eyes: fear the LORD, and depart from evil.",
-      "ref": "Proverbs 3:7",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 69,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The wise in heart will receive commandments: but a prating fool shall fall.",
-      "ref": "Proverbs 10:8",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 70,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "In the lips of him that hath understanding wisdom is found: but a rod is for the back of him that is void of understanding.",
-      "ref": "Proverbs 10:13",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 71,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The way of a fool is right in his own eyes: but he that hearkeneth unto counsel is wise.",
-      "ref": "Proverbs 12:15",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 72,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A prudent man concealeth knowledge: but the heart of fools proclaimeth foolishness.",
-      "ref": "Proverbs 12:23",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 73,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Poverty and shame shall be to him that refuseth instruction: but he that regardeth reproof shall be honoured.",
-      "ref": "Proverbs 13:18",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 74,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The simple inherit folly: but the prudent are crowned with knowledge.",
-      "ref": "Proverbs 14:18",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 75,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The heart of him that hath understanding seeketh knowledge: but the mouth of fools feedeth on foolishness.",
-      "ref": "Proverbs 15:14",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 76,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that refuseth instruction despiseth his own soul: but he that heareth reproof getteth understanding.",
-      "ref": "Proverbs 15:32",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 77,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Understanding is a wellspring of life unto him that hath it: but the instruction of fools is folly.",
-      "ref": "Proverbs 16:22",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 78,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The hoary head is a crown of glory, if it be found in the way of righteousness.",
-      "ref": "Proverbs 16:31",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 79,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A reproof entereth more into a wise man than an hundred stripes into a fool.",
-      "ref": "Proverbs 17:10",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 80,
+      "id": 21,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -894,161 +245,73 @@
       ]
     },
     {
-      "id": 81,
+      "id": 22,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "He that getteth wisdom loveth his own soul: he that keepeth understanding shall find good.",
-      "ref": "Proverbs 19:8",
+      "text": "A soft answer turneth away wrath: but grievous words stir up anger.",
+      "ref": "Proverbs 15:1",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 82,
+      "id": 23,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Cease, my son, to hear the instruction that causeth to err from the words of knowledge.",
-      "ref": "Proverbs 19:27",
+      "text": "To every thing there is a season, and a time to every purpose under the heaven.",
+      "ref": "Ecclesiastes 3:1",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 83,
+      "id": 24,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "There is gold, and a multitude of rubies: but the lips of knowledge are a precious jewel.",
-      "ref": "Proverbs 20:15",
+      "text": "Wisdom is better than strength.",
+      "ref": "Ecclesiastes 9:16",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 84,
+      "id": 25,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "A wise king scattereth the wicked, and bringeth the wheel over them.",
-      "ref": "Proverbs 20:26",
+      "text": "So teach us to number our days, that we may apply our hearts unto wisdom.",
+      "ref": "Psalm 90:12",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 85,
+      "id": 26,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "The glory of young men is their strength: and the beauty of old men is the gray head.",
-      "ref": "Proverbs 20:29",
+      "text": "The entrance of thy words giveth light; it giveth understanding unto the simple.",
+      "ref": "Psalm 119:130",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 86,
+      "id": 27,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "A wise man scaleth the city of the mighty, and casteth down the strength of the confidence thereof.",
-      "ref": "Proverbs 21:22",
+      "text": "He that walketh with wise men shall be wise.",
+      "ref": "Proverbs 13:20",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 87,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Train up a child in the way he should go: and when he is old, he will not depart from it.",
-      "ref": "Proverbs 22:6",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 88,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Remove not the ancient landmark, which thy fathers have set.",
-      "ref": "Proverbs 22:28",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 89,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Buy the truth, and sell it not; also wisdom, and instruction, and understanding.",
-      "ref": "Proverbs 23:23",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 90,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Through wisdom is an house builded; and by understanding it is established: And by knowledge shall the chambers be filled with all precious and pleasant riches.",
-      "ref": "Proverbs 24:3-4",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 91,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For by wise counsel thou shalt make thy war: and in multitude of counsellors there is safety.",
-      "ref": "Proverbs 24:6",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 92,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "As cold waters to a thirsty soul, so is good news from a far country.",
-      "ref": "Proverbs 25:25",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 93,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "A word fitly spoken is like apples of gold in pictures of silver.",
-      "ref": "Proverbs 25:11",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 94,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Seest thou a man wise in his own conceit? there is more hope of a fool than of him.",
-      "ref": "Proverbs 26:12",
-      "categories": [
-        "wisdom"
-      ]
-    },
-    {
-      "id": 95,
+      "id": 28,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -1059,634 +322,205 @@
       ]
     },
     {
-      "id": 96,
+      "id": 29,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "As iron sharpeneth iron, so a man sharpeneth the countenance of his friend.",
-      "ref": "Proverbs 27:17",
+      "text": "Counsel in the heart of man is like deep water; but a man of understanding will draw it out.",
+      "ref": "Proverbs 20:5",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 97,
+      "id": 30,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Whoso keepeth the law is a wise son: but he that is a companion of riotous men shameth his father.",
-      "ref": "Proverbs 28:7",
+      "text": "Get wisdom, get understanding: forget it not.",
+      "ref": "Proverbs 4:5",
       "categories": [
         "wisdom"
       ]
     },
     {
-      "id": 98,
+      "id": 31,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.",
-      "ref": "Proverbs 28:13",
+      "text": "Fear thou not; for I am with thee: be not dismayed; for I am thy God.",
+      "ref": "Isaiah 41:10",
       "categories": [
-        "wisdom"
+        "hope"
       ]
     },
     {
-      "id": 99,
+      "id": 32,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Where there is no vision, the people perish: but he that keepeth the law, happy is he.",
-      "ref": "Proverbs 29:18",
+      "text": "I can do all things through Christ which strengtheneth me.",
+      "ref": "Philippians 4:13",
       "categories": [
-        "wisdom"
+        "hope"
       ]
     },
     {
-      "id": 100,
+      "id": 33,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace, and not of evil, to give you an expected end.",
+      "text": "For I know the thoughts that I think toward you, saith the LORD, thoughts of peace.",
       "ref": "Jeremiah 29:11",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 101,
+      "id": 34,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Blessed is the man that trusteth in the LORD, and whose hope the LORD is.",
-      "ref": "Jeremiah 17:7",
+      "text": "Ask, and it shall be given you; seek, and ye shall find.",
+      "ref": "Matthew 7:7",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 102,
+      "id": 35,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "And hope maketh not ashamed; because the love of God is shed abroad in our hearts by the Holy Ghost which is given unto us.",
-      "ref": "Romans 5:5",
+      "text": "They that wait upon the LORD shall renew their strength; they shall mount up with wings as eagles.",
+      "ref": "Isaiah 40:31",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 103,
+      "id": 36,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Why art thou cast down, O my soul? and why art thou disquieted within me? hope thou in God: for I shall yet praise him, who is the health of my countenance, and my God.",
-      "ref": "Psalm 42:11",
+      "text": "This is the confidence that we have in him, that, if we ask any thing according to his will, he heareth us.",
+      "ref": "1 John 5:14",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 104,
+      "id": 37,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Behold, the eye of the LORD is upon them that fear him, upon them that hope in his mercy.",
-      "ref": "Psalm 33:18",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 105,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Let Israel hope in the LORD: for with the LORD there is mercy, and with him is plenteous redemption.",
-      "ref": "Psalm 130:7",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 106,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Be of good courage, and he shall strengthen your heart, all ye that hope in the LORD.",
-      "ref": "Psalm 31:24",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 107,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For the LORD shall be thy confidence, and shall keep thy foot from being taken.",
-      "ref": "Proverbs 3:26",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 108,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "There is hope of a tree, if it be cut down, that it will sprout again, and that the tender branch thereof will not cease.",
-      "ref": "Job 14:7",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 109,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And now, Lord, what wait I for? my hope is in thee.",
-      "ref": "Psalm 39:7",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 110,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thou art my hiding place and my shield: I hope in thy word.",
-      "ref": "Psalm 119:114",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 111,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Remember the word unto thy servant, upon which thou hast caused me to hope.",
-      "ref": "Psalm 119:49",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 112,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For whatsoever things were written aforetime were written for our learning, that we through patience and comfort of the scriptures might have hope.",
-      "ref": "Romans 15:4",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 113,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Now the God of hope fill you with all joy and peace in believing, that ye may abound in hope, through the power of the Holy Ghost.",
-      "ref": "Romans 15:13",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 114,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For we are saved by hope: but hope that is seen is not hope: for what a man seeth, why doth he yet hope for? But if we hope for that we see not, then do we with patience wait for it.",
-      "ref": "Romans 8:24-25",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 115,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Which hope we have as an anchor of the soul, both sure and stedfast, and which entereth into that within the veil.",
-      "ref": "Hebrews 6:19",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 116,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Blessed be the God and Father of our Lord Jesus Christ, which according to his abundant mercy hath begotten us again unto a lively hope by the resurrection of Jesus Christ from the dead.",
-      "ref": "1 Peter 1:3",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 117,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And every man that hath this hope in him purifieth himself, even as he is pure.",
-      "ref": "1 John 3:3",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 118,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD taketh pleasure in them that fear him, in those that hope in his mercy.",
-      "ref": "Psalm 147:11",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 119,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Behold, as the eyes of servants look unto the hand of their masters, and as the eyes of a maiden unto the hand of her mistress; so our eyes wait upon the LORD our God, until that he have mercy upon us.",
-      "ref": "Psalm 123:2",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 120,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I wait for the LORD, my soul doth wait, and in his word do I hope.",
-      "ref": "Psalm 130:5",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 121,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD is good unto them that wait for him, to the soul that seeketh him.",
-      "ref": "Lamentations 3:25",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 122,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "It is good that a man should both hope and quietly wait for the salvation of the LORD.",
-      "ref": "Lamentations 3:26",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 123,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Though he slay me, yet will I trust in him: but I will maintain mine own ways before him.",
-      "ref": "Job 13:15",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 124,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "My soul, wait thou only upon God; for my expectation is from him.",
-      "ref": "Psalm 62:5",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 125,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thou wilt shew me the path of life: in thy presence is fulness of joy; at thy right hand there are pleasures for evermore.",
-      "ref": "Psalm 16:11",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 126,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For the which cause I also suffer these things: nevertheless I am not ashamed: for I know whom I have believed, and am persuaded that he is able to keep that which I have committed unto him against that day.",
-      "ref": "2 Timothy 1:12",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 127,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Looking for that blessed hope, and the glorious appearing of the great God and our Saviour Jesus Christ.",
-      "ref": "Titus 2:13",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 128,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But I would not have you to be ignorant, brethren, concerning them which are asleep, that ye sorrow not, even as others which have no hope.",
-      "ref": "1 Thessalonians 4:13",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 129,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "That being justified by his grace, we should be made heirs according to the hope of eternal life.",
-      "ref": "Titus 3:7",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 130,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "God is not a man, that he should lie; neither the son of man, that he should repent: hath he said, and shall he not do it? or hath he spoken, and shall he not make it good?",
-      "ref": "Numbers 23:19",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 131,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He hath remembered his covenant for ever, the word which he commanded to a thousand generations.",
-      "ref": "Psalm 105:8",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 132,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The hope of the righteous shall be gladness: but the expectation of the wicked shall perish.",
-      "ref": "Proverbs 10:28",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 133,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Hope deferred maketh the heart sick: but when the desire cometh, it is a tree of life.",
-      "ref": "Proverbs 13:12",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 134,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For surely there is an end; and thine expectation shall not be cut off.",
-      "ref": "Proverbs 23:18",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 135,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And then shall they see the Son of man coming in the clouds with great power and glory.",
-      "ref": "Mark 13:26",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 136,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He which testifieth these things saith, Surely I come quickly. Amen. Even so, come, Lord Jesus.",
-      "ref": "Revelation 22:20",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 137,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Let us hold fast the profession of our faith without wavering; (for he is faithful that promised).",
-      "ref": "Hebrews 10:23",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 138,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And we desire that every one of you do shew the same diligence to the full assurance of hope unto the end.",
-      "ref": "Hebrews 6:11",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 139,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Wherefore gird up the loins of your mind, be sober, and hope to the end for the grace that is to be brought unto you at the revelation of Jesus Christ.",
-      "ref": "1 Peter 1:13",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 140,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He that overcometh shall inherit all things; and I will be his God, and he shall be my son.",
-      "ref": "Revelation 21:7",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 141,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And God shall wipe away all tears from their eyes; and there shall be no more death, neither sorrow, nor crying, neither shall there be any more pain: for the former things are passed away.",
-      "ref": "Revelation 21:4",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 142,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "In hope of eternal life, which God, that cannot lie, promised before the world began.",
-      "ref": "Titus 1:2",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 143,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And this is the promise that he hath promised us, even eternal life.",
-      "ref": "1 John 2:25",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 144,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And if I go and prepare a place for you, I will come again, and receive you unto myself; that where I am, there ye may be also.",
-      "ref": "John 14:3",
-      "categories": [
-        "hope"
-      ]
-    },
-    {
-      "id": 145,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But as it is written, Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which God hath prepared for them that love him.",
+      "text": "Eye hath not seen, nor ear heard, neither have entered into the heart of man, the things which God hath prepared.",
       "ref": "1 Corinthians 2:9",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 146,
+      "id": 38,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "For the Lord himself shall descend from heaven with a shout, with the voice of the archangel, and with the trump of God: and the dead in Christ shall rise first.",
-      "ref": "1 Thessalonians 4:16",
+      "text": "He will fulfil the desire of them that fear him: he also will hear their cry, and will save them.",
+      "ref": "Psalm 145:19",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 147,
+      "id": 39,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Then we which are alive and remain shall be caught up together with them in the clouds, to meet the Lord in the air: and so shall we ever be with the Lord.",
-      "ref": "1 Thessalonians 4:17",
+      "text": "God is our refuge and strength, a very present help in trouble.",
+      "ref": "Psalm 46:1",
       "categories": [
         "hope"
       ]
     },
     {
-      "id": 148,
+      "id": 40,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "For God so loved the world, that he gave his only begotten Son, that whosoever believeth in him should not perish, but have everlasting life.",
-      "ref": "John 3:16",
+      "text": "Fear not: for I have redeemed thee, I have called thee by thy name; thou art mine.",
+      "ref": "Isaiah 43:1",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 41,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "Lo, I am with you alway, even unto the end of the world.",
+      "ref": "Matthew 28:20",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 42,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "He is faithful that promised.",
+      "ref": "Hebrews 10:23",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 43,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "All things are possible to him that believeth.",
+      "ref": "Mark 9:23",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 44,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "Let us not be weary in well doing: for in due season we shall reap, if we faint not.",
+      "ref": "Galatians 6:9",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 45,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "We know that all things work together for good to them that love God.",
+      "ref": "Romans 8:28",
+      "categories": [
+        "hope"
+      ]
+    },
+    {
+      "id": 46,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "Charity suffereth long, and is kind; charity envieth not.",
+      "ref": "1 Corinthians 13:4",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 149,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Beloved, let us love one another: for love is of God; and every one that loveth is born of God, and knoweth God. He that loveth not knoweth not God; for God is love.",
-      "ref": "1 John 4:7-8",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 150,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And we have known and believed the love that God hath to us. God is love; and he that dwelleth in love dwelleth in God, and God in him.",
-      "ref": "1 John 4:16",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 151,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.",
-      "ref": "Romans 5:8",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 152,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Charity suffereth long, and is kind; charity envieth not; charity vaunteth not itself, is not puffed up, Doth not behave itself unseemly, seeketh not her own, is not easily provoked, thinketh no evil; Rejoiceth not in iniquity, but rejoiceth in the truth; Beareth all things, believeth all things, hopeth all things, endureth all things.",
-      "ref": "1 Corinthians 13:4-7",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 153,
+      "id": 47,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -1697,117 +531,51 @@
       ]
     },
     {
-      "id": 154,
+      "id": 48,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Husbands, love your wives, even as Christ also loved the church, and gave himself for it.",
-      "ref": "Ephesians 5:25",
+      "text": "Beloved, let us love one another: for love is of God.",
+      "ref": "1 John 4:7",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 155,
+      "id": 49,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Jesus said unto him, Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind. This is the first and great commandment. And the second is like unto it, Thou shalt love thy neighbour as thyself.",
-      "ref": "Matthew 22:37-39",
+      "text": "Hereby perceive we the love of God, because he laid down his life for us.",
+      "ref": "1 John 3:16",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 156,
+      "id": 50,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Greater love hath no man than this, that a man lay down his life for his friends.",
-      "ref": "John 15:13",
+      "text": "A new commandment I give unto you, That ye love one another.",
+      "ref": "John 13:34",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 157,
+      "id": 51,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "We love him, because he first loved us.",
-      "ref": "1 John 4:19",
+      "text": "Above all these things put on charity, which is the bond of perfectness.",
+      "ref": "Colossians 3:14",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 158,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Owe no man any thing, but to love one another: for he that loveth another hath fulfilled the law.",
-      "ref": "Romans 13:8",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 159,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.",
-      "ref": "Ephesians 5:2",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 160,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Let all your things be done with charity.",
-      "ref": "1 Corinthians 16:14",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 161,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And above all things have fervent charity among yourselves: for charity shall cover the multitude of sins.",
-      "ref": "1 Peter 4:8",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 162,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "My little children, let us not love in word, neither in tongue; but in deed and in truth.",
-      "ref": "1 John 3:18",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 163,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Hatred stirreth up strifes: but love covereth all sins.",
-      "ref": "Proverbs 10:12",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 164,
+      "id": 52,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -1818,172 +586,51 @@
       ]
     },
     {
-      "id": 165,
+      "id": 53,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Though I speak with the tongues of men and of angels, and have not charity, I am become as sounding brass, or a tinkling cymbal.",
-      "ref": "1 Corinthians 13:1",
+      "text": "Thou shalt love the Lord thy God with all thy heart, and with all thy soul, and with all thy mind.",
+      "ref": "Matthew 22:37",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 166,
+      "id": 54,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "And though I have the gift of prophecy, and understand all mysteries, and all knowledge; and though I have all faith, so that I could remove mountains, and have not charity, I am nothing.",
-      "ref": "1 Corinthians 13:2",
+      "text": "Thou shalt love thy neighbour as thyself.",
+      "ref": "Matthew 22:39",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 167,
+      "id": 55,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "And though I bestow all my goods to feed the poor, and though I give my body to be burned, and have not charity, it profiteth me nothing.",
-      "ref": "1 Corinthians 13:3",
+      "text": "For God so loved the world, that he gave his only begotten Son.",
+      "ref": "John 3:16",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 168,
+      "id": 56,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith, Meekness, temperance: against such there is no law.",
-      "ref": "Galatians 5:22-23",
+      "text": "We love him, because he first loved us.",
+      "ref": "1 John 4:19",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 169,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Herein is love, not that we loved God, but that he loved us, and sent his Son to be the propitiation for our sins.",
-      "ref": "1 John 4:10",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 170,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "If a man say, I love God, and hateth his brother, he is a liar: for he that loveth not his brother whom he hath seen, how can he love God whom he hath not seen?",
-      "ref": "1 John 4:20",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 171,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And this commandment have we from him, That he who loveth God love his brother also.",
-      "ref": "1 John 4:21",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 172,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Whosoever believeth that Jesus is the Christ is born of God: and every one that loveth him that begat loveth him also that is begotten of him.",
-      "ref": "1 John 5:1",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 173,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "By this we know that we love the children of God, when we love God, and keep his commandments.",
-      "ref": "1 John 5:2",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 174,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For this is the love of God, that we keep his commandments: and his commandments are not grievous.",
-      "ref": "1 John 5:3",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 175,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Many waters cannot quench love, neither can the floods drown it: if a man would give all the substance of his house for love, it would utterly be contemned.",
-      "ref": "Song of Solomon 8:7",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 176,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I am my beloved's, and my beloved is mine: he feedeth among the lilies.",
-      "ref": "Song of Solomon 6:3",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 177,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Set me as a seal upon thine heart, as a seal upon thine arm: for love is strong as death; jealousy is cruel as the grave: the coals thereof are coals of fire, which hath a most vehement flame.",
-      "ref": "Song of Solomon 8:6",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 178,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Thou shalt love the Lord thy God with all thine heart, and with all thy soul, and with all thy might.",
-      "ref": "Deuteronomy 6:5",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 179,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But I say unto you, Love your enemies, bless them that curse you, do good to them that hate you, and pray for them which despitefully use you, and persecute you.",
-      "ref": "Matthew 5:44",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 180,
+      "id": 57,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -1994,161 +641,62 @@
       ]
     },
     {
-      "id": 181,
+      "id": 58,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "As the Father hath loved me, so have I loved you: continue ye in my love.",
-      "ref": "John 15:9",
+      "text": "Charity shall cover the multitude of sins.",
+      "ref": "1 Peter 4:8",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 182,
+      "id": 59,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "This is my commandment, That ye love one another, as I have loved you.",
-      "ref": "John 15:12",
+      "text": "Perfect love casteth out fear.",
+      "ref": "1 John 4:18",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 183,
+      "id": 60,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "For all the law is fulfilled in one word, even in this; Thou shalt love thy neighbour as thyself.",
-      "ref": "Galatians 5:14",
+      "text": "Walk in love, as Christ also hath loved us.",
+      "ref": "Ephesians 5:2",
       "categories": [
         "love"
       ]
     },
     {
-      "id": 184,
+      "id": 61,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Who shall separate us from the love of Christ? shall tribulation, or distress, or persecution, or famine, or nakedness, or peril, or sword?",
-      "ref": "Romans 8:35",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 185,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Nay, in all these things we are more than conquerors through him that loved us.",
-      "ref": "Romans 8:37",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 186,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Be ye therefore followers of God, as dear children; And walk in love, as Christ also hath loved us, and hath given himself for us an offering and a sacrifice to God for a sweetsmelling savour.",
-      "ref": "Ephesians 5:1-2",
-      "categories": [
-        "love"
-      ]
-    },
-    {
-      "id": 187,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Repent ye therefore, and be converted, that your sins may be blotted out, when the times of refreshing shall come from the presence of the Lord.",
-      "ref": "Acts 3:19",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 188,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "If we confess our sins, he is faithful and just to forgive us our sins, and to cleanse us from all unrighteousness.",
+      "text": "If we confess our sins, he is faithful and just to forgive us our sins.",
       "ref": "1 John 1:9",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 189,
+      "id": 62,
       "book": "",
       "chapter": 0,
       "verse": 0,
       "text": "Repent ye: for the kingdom of heaven is at hand.",
-      "ref": "Matthew 3:2",
+      "ref": "Matthew 4:17",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 190,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I tell you, Nay: but, except ye repent, ye shall all likewise perish.",
-      "ref": "Luke 13:3",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 191,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Then Peter said unto them, Repent, and be baptized every one of you in the name of Jesus Christ for the remission of sins, and ye shall receive the gift of the Holy Ghost.",
-      "ref": "Acts 2:38",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 192,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "As many as I love, I rebuke and chasten: be zealous therefore, and repent.",
-      "ref": "Revelation 3:19",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 193,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD, and he will have mercy upon him; and to our God, for he will abundantly pardon.",
-      "ref": "Isaiah 55:7",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 194,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For I acknowledge my transgressions: and my sin is ever before me.",
-      "ref": "Psalm 51:3",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 195,
+      "id": 63,
       "book": "",
       "chapter": 0,
       "verse": 0,
@@ -2159,540 +707,133 @@
       ]
     },
     {
-      "id": 196,
+      "id": 64,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "The sacrifices of God are a broken spirit: a broken and a contrite heart, O God, thou wilt not despise.",
-      "ref": "Psalm 51:17",
+      "text": "Let the wicked forsake his way, and the unrighteous man his thoughts: and let him return unto the LORD.",
+      "ref": "Isaiah 55:7",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 197,
+      "id": 65,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "From that time Jesus began to preach, and to say, Repent: for the kingdom of heaven is at hand.",
-      "ref": "Matthew 4:17",
+      "text": "He that covereth his sins shall not prosper: but whoso confesseth and forsaketh them shall have mercy.",
+      "ref": "Proverbs 28:13",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 198,
+      "id": 66,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "I came not to call the righteous, but sinners to repentance.",
-      "ref": "Luke 5:32",
+      "text": "Wash you, make you clean; put away the evil of your doings from before mine eyes.",
+      "ref": "Isaiah 1:16",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 199,
+      "id": 67,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Likewise, I say unto you, there is joy in the presence of the angels of God over one sinner that repenteth.",
-      "ref": "Luke 15:10",
+      "text": "Repent ye therefore, and be converted, that your sins may be blotted out.",
+      "ref": "Acts 3:19",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 200,
+      "id": 68,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "And the times of this ignorance God winked at; but now commandeth all men every where to repent.",
-      "ref": "Acts 17:30",
+      "text": "O Israel, return unto the LORD thy God; for thou hast fallen by thine iniquity.",
+      "ref": "Hosea 14:1",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 201,
+      "id": 69,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Testifying both to the Jews, and also to the Greeks, repentance toward God, and faith toward our Lord Jesus Christ.",
-      "ref": "Acts 20:21",
+      "text": "Search me, O God, and know my heart: try me, and know my thoughts.",
+      "ref": "Psalm 139:23",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 202,
+      "id": 70,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Or despisest thou the riches of his goodness and forbearance and longsuffering; not knowing that the goodness of God leadeth thee to repentance?",
-      "ref": "Romans 2:4",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 203,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For godly sorrow worketh repentance to salvation not to be repented of: but the sorrow of the world worketh death.",
-      "ref": "2 Corinthians 7:10",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 204,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "If my people, which are called by my name, shall humble themselves, and pray, and seek my face, and turn from their wicked ways; then will I hear from heaven, and will forgive their sin, and will heal their land.",
-      "ref": "2 Chronicles 7:14",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 205,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Wash you, make you clean; put away the evil of your doings from before mine eyes; cease to do evil; Learn to do well; seek judgment, relieve the oppressed, judge the fatherless, plead for the widow.",
-      "ref": "Isaiah 1:16-17",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 206,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow; though they be red like crimson, they shall be as wool.",
+      "text": "Come now, and let us reason together, saith the LORD: though your sins be as scarlet, they shall be as white as snow.",
       "ref": "Isaiah 1:18",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 207,
+      "id": 71,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "And I will give them an heart to know me, that I am the LORD: and they shall be my people, and I will be their God: for they shall return unto me with their whole heart.",
-      "ref": "Jeremiah 24:7",
+      "text": "Acquaint now thyself with him, and be at peace.",
+      "ref": "Job 22:21",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 208,
+      "id": 72,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Turn ye unto me, saith the LORD of hosts, and I will turn unto you, saith the LORD of hosts.",
+      "text": "Blessed is he whose transgression is forgiven, whose sin is covered.",
+      "ref": "Psalm 32:1",
+      "categories": [
+        "repentance"
+      ]
+    },
+    {
+      "id": 73,
+      "book": "",
+      "chapter": 0,
+      "verse": 0,
+      "text": "Turn ye unto me, saith the LORD of hosts, and I will turn unto you.",
       "ref": "Zechariah 1:3",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 209,
+      "id": 74,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Bring forth therefore fruits meet for repentance.",
-      "ref": "Matthew 3:8",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 210,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Then drew near unto him all the publicans and sinners for to hear him. And the Pharisees and scribes murmured, saying, This man receiveth sinners, and eateth with them.",
-      "ref": "Luke 15:1-2",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 211,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "What man of you, having an hundred sheep, if he lose one of them, doth not leave the ninety and nine in the wilderness, and go after that which is lost, until he find it?",
-      "ref": "Luke 15:4",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 212,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And when he cometh home, he calleth together his friends and neighbours, saying unto them, Rejoice with me; for I have found my sheep which was lost.",
-      "ref": "Luke 15:6",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 213,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I say unto you, that likewise joy shall be in heaven over one sinner that repenteth, more than over ninety and nine just persons, which need no repentance.",
-      "ref": "Luke 15:7",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 214,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And he arose, and came to his father. But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.",
-      "ref": "Luke 15:20",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 215,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For the Son of man is come to seek and to save that which was lost.",
-      "ref": "Luke 19:10",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 216,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And by him all that believe are justified from all things, from which ye could not be justified by the law of Moses.",
-      "ref": "Acts 13:39",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 217,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Him did God exalt with his right hand to be a Prince and a Saviour, for to give repentance to Israel, and forgiveness of sins.",
-      "ref": "Acts 5:31",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 218,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Open rebuke is better than secret love. Faithful are the wounds of a friend; but the kisses of an enemy are deceitful.",
-      "ref": "Proverbs 27:5-6",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 219,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Blotting out the handwriting of ordinances that was against us, which was contrary to us, and took it out of the way, nailing it to his cross.",
-      "ref": "Colossians 2:14",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 220,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And such were some of you: but ye are washed, but ye are sanctified, but ye are justified in the name of the Lord Jesus, and by the Spirit of our God.",
-      "ref": "1 Corinthians 6:11",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 221,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Whom God hath set forth to be a propitiation through faith in his blood, to declare his righteousness for the remission of sins that are past, through the forbearance of God.",
-      "ref": "Romans 3:25",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 222,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Now I rejoice, not that ye were made sorry, but that ye sorrowed to repentance: for ye were made sorry after a godly manner, that ye might receive damage by us in nothing.",
-      "ref": "2 Corinthians 7:9",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 223,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "In meekness instructing those that oppose themselves; if God peradventure will give them repentance to the acknowledging of the truth.",
-      "ref": "2 Timothy 2:25",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 224,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And that they may recover themselves out of the snare of the devil, who are taken captive by him at his will.",
-      "ref": "2 Timothy 2:26",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 225,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Nevertheless I have somewhat against thee, because thou hast left thy first love. Remember therefore from whence thou art fallen, and repent, and do the first works; or else I will come unto thee quickly, and will remove thy candlestick out of his place, except thou repent.",
-      "ref": "Revelation 2:4-5",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 226,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Repent; or else I will come unto thee quickly, and will fight against them with the sword of my mouth.",
-      "ref": "Revelation 2:16",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 227,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And I gave her space to repent of her fornication; and she repented not.",
+      "text": "I gave her space to repent.",
       "ref": "Revelation 2:21",
       "categories": [
         "repentance"
       ]
     },
     {
-      "id": 228,
+      "id": 75,
       "book": "",
       "chapter": 0,
       "verse": 0,
-      "text": "Remember therefore how thou hast received and heard, and hold fast, and repent. If therefore thou shalt not watch, I will come on thee as a thief, and thou shalt not know what hour I will come upon thee.",
-      "ref": "Revelation 3:3",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 229,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Behold, I stand at the door, and knock: if any man hear my voice, and open the door, I will come in to him, and will sup with him, and he with me.",
-      "ref": "Revelation 3:20",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 230,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "And the Spirit and the bride say, Come. And let him that heareth say, Come. And let him that is athirst come. And whosoever will, let him take the water of life freely.",
-      "ref": "Revelation 22:17",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 231,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For thou, Lord, art good, and ready to forgive; and plenteous in mercy unto all them that call upon thee.",
-      "ref": "Psalm 86:5",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 232,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "The LORD is merciful and gracious, slow to anger, and plenteous in mercy.",
-      "ref": "Psalm 103:8",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 233,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He will not always chide: neither will he keep his anger for ever. He hath not dealt with us after our sins; nor rewarded us according to our iniquities.",
-      "ref": "Psalm 103:9-10",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 234,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For as the heaven is high above the earth, so great is his mercy toward them that fear him. As far as the east is from the west, so far hath he removed our transgressions from us.",
-      "ref": "Psalm 103:11-12",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 235,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "I will heal their backsliding, I will love them freely: for mine anger is turned away from him.",
-      "ref": "Hosea 14:4",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 236,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Who is a God like unto thee, that pardoneth iniquity, and passeth by the transgression of the remnant of his heritage? he retaineth not his anger for ever, because he delighteth in mercy.",
-      "ref": "Micah 7:18",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 237,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "He will turn again, he will have compassion upon us; he will subdue our iniquities; and thou wilt cast all their sins into the depths of the sea.",
-      "ref": "Micah 7:19",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 238,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Seek ye the LORD while he may be found, call ye upon him while he is near.",
-      "ref": "Isaiah 55:6",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 239,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "For I have no pleasure in the death of him that dieth, saith the Lord GOD: wherefore turn yourselves, and live ye.",
-      "ref": "Ezekiel 18:32",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 240,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Cast away from you all your transgressions, whereby ye have transgressed; and make you a new heart and a new spirit: for why will ye die, O house of Israel?",
-      "ref": "Ezekiel 18:31",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 241,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Then shall ye call upon me, and ye shall go and pray unto me, and I will hearken unto you. And ye shall seek me, and find me, when ye shall search for me with all your heart.",
-      "ref": "Jeremiah 29:12-13",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 242,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "Return, ye backsliding children, and I will heal your backslidings. Behold, we come unto thee; for thou art the LORD our God.",
-      "ref": "Jeremiah 3:22",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 243,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "But if the wicked will turn from all his sins that he hath committed, and keep all my statutes, and do that which is lawful and right, he shall surely live, he shall not die.",
-      "ref": "Ezekiel 18:21",
-      "categories": [
-        "repentance"
-      ]
-    },
-    {
-      "id": 244,
-      "book": "",
-      "chapter": 0,
-      "verse": 0,
-      "text": "All his transgressions that he hath committed, they shall not be mentioned unto him: in his righteousness that he hath done he shall live.",
-      "ref": "Ezekiel 18:22",
+      "text": "Wash me throughly from mine iniquity, and cleanse me from my sin.",
+      "ref": "Psalm 51:2",
       "categories": [
         "repentance"
       ]
