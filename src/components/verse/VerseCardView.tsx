@@ -91,6 +91,7 @@ type Props = {
   captureId: string;
   titleLine: string;
   footerText: string;
+  sanctuary?: "celestial" | "nature";
   /** Móvil: icono de descarga (esquina del card) */
   actionSlot?: ReactNode;
   /** Móvil/desktop: icono de audio (esquina opuesta al menú) */
@@ -110,6 +111,7 @@ export function VerseCardView({
   captureId,
   titleLine,
   footerText,
+  sanctuary = "celestial",
   actionSlot,
   audioSlot,
   actionSlotDesktop,
@@ -119,9 +121,28 @@ export function VerseCardView({
   const n = cache.getRecentRefs().length;
   const L = labelsFor(lang);
   const isLongVerse = verse.text.length > 170 || /\n/.test(verse.text);
-  const doveSizeClass = isLongVerse ? "h-[5.5rem] w-[5.5rem] md:h-32 md:w-32" : "h-[5.5rem] w-[5.5rem] md:h-24 md:w-24";
+
+  // ── Theme-dependent styles ──────────────────────────────────────────────
+  const isNature = sanctuary === "nature";
+  const articleMdBg = isNature
+    ? "md:from-[#0d1a0f]/95 md:to-[#0a1208]/60"
+    : "md:from-[#12132a]/95 md:to-night/50";
+  const articleMdBorder = isNature ? "md:border-emerald-500/10" : "md:border-gold-500/10";
+  const captureMdBg = isNature ? "md:bg-[#0d1a0f]/25" : "md:bg-black/20";
+  const captureMdBorder = isNature ? "md:border-emerald-500/5" : "md:border-gold-500/5";
+  const captureMobileBg = isNature
+    ? "max-md:bg-[#0f2212]/50 max-md:border-emerald-400/20 max-md:shadow-[0_0_10px_rgba(52,211,153,0.08)]"
+    : "max-md:bg-[#1f1634]/40 max-md:border-gold-500/20 max-md:shadow-[0_0_10px_rgba(212,175,55,0.1)]";
+  const articleMobileBg = isNature
+    ? "max-md:border-[#4ade80]/25 max-md:bg-[#0f1f12]/20"
+    : "max-md:border-[#a6823a]/40 max-md:bg-slate-950/15";
+  const doveSizeClass = isLongVerse
+    ? "h-[5.5rem] w-[5.5rem] md:h-32 md:w-32"
+    : "h-[5.5rem] w-[5.5rem] md:h-24 md:w-24";
   /** Grid track must fit the dove on md+ so the image does not spill into the verse column. */
-  const doveGridColClass = isLongVerse ? "md:grid-cols-[minmax(0,8rem)_minmax(0,1fr)]" : "md:grid-cols-[minmax(0,6rem)_minmax(0,1fr)]";
+  const doveGridColClass = isLongVerse
+    ? "md:grid-cols-[minmax(0,8rem)_minmax(0,1fr)]"
+    : "md:grid-cols-[minmax(0,6rem)_minmax(0,1fr)]";
   const doveColWidthClass = isLongVerse ? "md:w-32" : "md:w-24";
   const sourceLine =
     lang === "es"
@@ -181,15 +202,26 @@ export function VerseCardView({
 
   return (
     <article
-      className="group relative z-10 mx-auto w-full max-w-2xl overflow-visible border px-2 py-8 max-md:min-h-0 max-md:rounded-2xl max-md:border-[0.5px] max-md:border-[#a6823a]/40 max-md:bg-slate-950/15 max-md:shadow-none md:rounded-2xl md:border-gold-500/10 md:bg-gradient-to-b md:from-[#12132a]/95 md:to-night/50 md:px-6 md:py-6 md:shadow-[0_0_24px_rgba(0,0,0,0.28)]"
+      className={`group relative z-10 mx-auto w-full max-w-2xl overflow-visible border px-2 py-8 transition-colors duration-700 max-md:min-h-0 max-md:rounded-2xl max-md:border-[0.5px] max-md:shadow-none md:rounded-2xl md:bg-gradient-to-b md:px-6 md:py-6 md:shadow-[0_0_24px_rgba(0,0,0,0.28)] ${articleMobileBg} ${articleMdBg} ${articleMdBorder}`}
     >
-      {audioSlot ? <div className="absolute left-3 top-3 z-20 max-md:hidden">{audioSlot}</div> : null}
-      {actionSlot ? <div className="absolute right-3 top-3 z-20 max-md:hidden">{actionSlot}</div> : null}
+      {audioSlot ? (
+        <div className="absolute left-3 top-3 z-20 max-md:hidden">
+          {audioSlot}
+        </div>
+      ) : null}
+      {actionSlot ? (
+        <div className="absolute right-3 top-3 z-20 max-md:hidden">
+          {actionSlot}
+        </div>
+      ) : null}
 
       <div className="relative mb-3 flex w-full items-center justify-center sm:mb-3">
         <p className="flex w-full justify-center max-md:px-12">
           <span className="inline-flex max-w-[calc(100vw-8.5rem)] items-center justify-center gap-1.5 rounded-full border border-gold-500/40 bg-gold-500/10 px-3 py-1 text-center font-sans text-[11px] font-semibold uppercase tracking-[0.16em] text-gold-400 sm:max-w-none">
-            <i className="fa-solid fa-book-bible me-1.5 shrink-0 opacity-80" aria-hidden />
+            <i
+              className="fa-solid fa-book-bible me-1.5 shrink-0 opacity-80"
+              aria-hidden
+            />
             <span className="truncate">{categoryLabel}</span>
           </span>
         </p>
@@ -207,13 +239,11 @@ export function VerseCardView({
 
       <div
         id={captureId}
-        className="capture-root relative overflow-hidden bg-black/0 px-1 py-2 max-md:rounded-2xl max-md:border max-md:border-gold-500/20 max-md:bg-[#1f1634]/40 max-md:px-3 max-md:py-5 max-md:shadow-[0_0_10px_rgba(212,175,55,0.1)] md:rounded-lg md:border md:border-gold-500/5 md:bg-black/20 md:px-5 md:py-5"
+        className={`capture-root relative overflow-hidden bg-black/0 px-1 py-2 transition-colors duration-700 max-md:rounded-2xl max-md:border max-md:px-3 max-md:py-5 md:rounded-lg md:border md:px-5 md:py-5 ${captureMobileBg} ${captureMdBg} ${captureMdBorder}`}
       >
         <div className="relative z-10">
           <div className="mb-2 flex items-center justify-center gap-2 text-gold-400 sm:mb-3 sm:gap-3">
-            <h2
-              className="w-full text-center font-display text-sm font-semibold uppercase tracking-[0.2em] text-gold-200 sm:text-base md:text-base max-md:text-[#f7d97e] max-md:[text-shadow:0_0_10px_rgba(212,175,55,0.35)]"
-            >
+            <h2 className="w-full text-center font-display text-sm font-semibold uppercase tracking-[0.2em] text-gold-200 sm:text-base md:text-base max-md:text-[#f7d97e] max-md:[text-shadow:0_0_10px_rgba(212,175,55,0.35)]">
               {titleLine}
             </h2>
           </div>
@@ -233,14 +263,10 @@ export function VerseCardView({
               />
             </div>
             <div className="isolate flex min-w-0 flex-col gap-3 sm:gap-4 md:gap-5 md:pl-0">
-              <p
-                className="text-center text-base font-normal leading-relaxed text-gold-100/95 sm:text-2xl md:text-xl md:pb-2 md:leading-[1.55] max-md:px-1 max-md:py-2 max-md:text-[1.05rem] max-md:font-medium max-md:leading-8 max-md:text-[#f8e4ae]"
-              >
+              <p className="text-center text-base font-normal leading-relaxed text-gold-100/95 sm:text-2xl md:text-xl md:pb-2 md:leading-[1.55] max-md:px-1 max-md:py-2 max-md:text-[1.05rem] max-md:font-medium max-md:leading-8 max-md:text-[#f8e4ae]">
                 “{verse.text}”
               </p>
-              <p
-                className="shrink-0 text-center font-display text-sm leading-normal text-gold-500 sm:text-base md:hidden max-md:mt-0 max-md:text-[#f2cb5d] max-md:[text-shadow:0_0_8px_rgba(212,175,55,0.25)]"
-              >
+              <p className="shrink-0 text-center font-display text-sm leading-normal text-gold-500 sm:text-base md:hidden max-md:mt-0 max-md:text-[#f2cb5d] max-md:[text-shadow:0_0_8px_rgba(212,175,55,0.25)]">
                 {verse.ref} · {testamentLabel}
               </p>
             </div>
@@ -249,9 +275,7 @@ export function VerseCardView({
             {verse.ref} · {testamentLabel}
           </p>
         </div>
-        <div
-          className="relative z-10 mt-3 flex w-full items-center justify-center gap-2 text-gold-500/50 sm:mt-4"
-        >
+        <div className="relative z-10 mt-3 flex w-full items-center justify-center gap-2 text-gold-500/50 sm:mt-4">
           <span className="h-px max-w-[40%] flex-1 bg-gradient-to-r from-transparent to-gold-500/30" />
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -272,7 +296,7 @@ export function VerseCardView({
           <button
             type="button"
             onClick={() => setDevotionOpen("meditate")}
-            className="bg-transparent px-1 py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
+            className="focus-ring rounded-md px-1.5 bg-transparent py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
           >
             {devotionCopy.meditate.label}
           </button>
@@ -282,7 +306,7 @@ export function VerseCardView({
           <button
             type="button"
             onClick={() => setDevotionOpen("pray")}
-            className="bg-transparent px-1 py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
+            className="focus-ring rounded-md px-1.5 bg-transparent py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
           >
             {devotionCopy.pray.label}
           </button>
@@ -292,7 +316,7 @@ export function VerseCardView({
           <button
             type="button"
             onClick={() => setDevotionOpen("reflect")}
-            className="bg-transparent px-1 py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
+            className="focus-ring rounded-md px-1.5 bg-transparent py-0 text-xs font-semibold text-gold-300/80 transition hover:text-gold-200"
           >
             {devotionCopy.reflect.label}
           </button>
@@ -302,14 +326,12 @@ export function VerseCardView({
         </p>
       </div>
 
-      <div
-        className="mt-4 hidden w-full max-w-md flex-col items-stretch gap-3 sm:mt-5 sm:mx-auto sm:flex sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-4"
-      >
+      <div className="mt-4 hidden w-full max-w-md flex-col items-stretch gap-3 sm:mt-5 sm:mx-auto sm:flex sm:max-w-none sm:flex-row sm:items-center sm:justify-center sm:gap-4">
         <button
           type="button"
           onClick={onNewVerse}
           disabled={isLoading}
-          className="inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/15 px-4 py-2.5 text-sm font-semibold text-gold-200 transition hover:border-gold-400 hover:bg-gold-500/25 sm:max-w-xs sm:flex-initial sm:px-6 disabled:cursor-wait disabled:opacity-60"
+          className="focus-ring inline-flex min-h-11 flex-1 items-center justify-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/15 px-4 py-2.5 text-sm font-semibold text-gold-200 transition hover:border-gold-400 hover:bg-gold-500/25 sm:max-w-xs sm:flex-initial sm:px-6 disabled:cursor-wait disabled:opacity-60"
         >
           {isLoading ? (
             <i className="fa-solid fa-spinner fa-spin" aria-hidden />
@@ -326,7 +348,7 @@ export function VerseCardView({
           type="button"
           onClick={onNewVerse}
           disabled={isLoading}
-          className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/15 px-4 py-2.5 text-sm font-semibold text-gold-200 transition hover:border-gold-400 hover:bg-gold-500/25 disabled:cursor-wait disabled:opacity-60"
+          className="focus-ring inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-full border border-gold-500/50 bg-gold-500/15 px-4 py-2.5 text-sm font-semibold text-gold-200 transition hover:border-gold-400 hover:bg-gold-500/25 disabled:cursor-wait disabled:opacity-60"
         >
           {isLoading ? (
             <i className="fa-solid fa-spinner fa-spin" aria-hidden />
@@ -350,6 +372,7 @@ export function VerseCardView({
           closeLabel={devotionCopy.close}
           bodyBackgroundImageUrl="/img/paloma-perfil-fondo.jpg"
           panelClassName="md:max-w-2xl"
+          sanctuary={sanctuary}
           footer={
             <button
               type="button"

@@ -23,3 +23,9 @@
 .icon-glow {
   text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
 }
+
+@layer utilities {
+  .focus-ring {
+    @apply focus-visible:ring-2 focus-visible:ring-gold-400/80 focus-visible:outline-none focus:outline-none;
+  }
+}

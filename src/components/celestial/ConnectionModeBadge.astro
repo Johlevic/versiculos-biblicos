@@ -1,6 +1,6 @@
 <div
   id="refugio-connection-badge"
-  class="inline-flex items-center gap-1.5 rounded-full border border-gold-500/35 bg-black/35 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-200/85"
+  class="opacity-0 transition-opacity duration-150 inline-flex items-center gap-1.5 rounded-full border border-gold-500/35 bg-black/35 px-2 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold-200/85"
   aria-live="polite"
 >
   <span
@@ -35,6 +35,7 @@
     };
 
     apply();
+    badge.classList.remove("opacity-0");
     window.addEventListener("online", apply);
     window.addEventListener("offline", apply);
   })();

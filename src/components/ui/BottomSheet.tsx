@@ -13,6 +13,7 @@ type BottomSheetProps = {
   maxHeightClassName?: string;
   zIndexClassName?: string;
   panelClassName?: string;
+  sanctuary?: "celestial" | "nature";
 };
 
 /**
@@ -32,6 +33,7 @@ export function BottomSheet({
   maxHeightClassName = "max-h-[80dvh] md:max-h-[82vh]",
   zIndexClassName = "z-[95]",
   panelClassName = "md:max-w-xl",
+  sanctuary = "celestial",
 }: BottomSheetProps) {
   useEffect(() => {
     if (!isOpen) return;
@@ -57,6 +59,17 @@ export function BottomSheet({
 
   if (!isOpen || typeof document === "undefined") return null;
 
+  const isNature = sanctuary === "nature";
+  const panelBg = isNature ? "bg-[#081208]" : "bg-[#0b1024]";
+  const panelBorder = isNature ? "border-emerald-400/50" : "border-gold-400/55";
+  const headerBorder = isNature ? "border-emerald-500/30" : "border-gold-500/35";
+  const footerBorder = isNature ? "border-emerald-500/30" : "border-gold-500/35";
+  const handleColor = isNature ? "bg-emerald-200/40" : "bg-gold-200/45";
+  const titleColor = isNature ? "text-emerald-100" : "text-gold-200";
+  const closeBtnBorder = isNature
+    ? "border-emerald-500/40 hover:border-emerald-300 hover:bg-emerald-500/15"
+    : "border-gold-500/45 hover:border-gold-300 hover:bg-gold-500/15";
+
   return createPortal(
     <div
       className={`fixed inset-0 ${zIndexClassName} flex items-end justify-center bg-[#04060f]/84 px-0 backdrop-blur-[2px] md:items-center md:px-4`}
@@ -67,21 +80,21 @@ export function BottomSheet({
         aria-modal="true"
         aria-label={title}
         onClick={(e) => e.stopPropagation()}
-        className={`flex w-full min-h-0 flex-col rounded-t-2xl border border-gold-400/55 border-b-0 bg-[#0b1024] text-gold-100 shadow-[0_24px_64px_rgba(0,0,0,0.72)] md:max-w-md md:rounded-2xl md:border ${maxHeightClassName} ${panelClassName}`.trim()}
+        className={`flex w-full min-h-0 flex-col rounded-t-2xl border border-b-0 text-gold-100 shadow-[0_24px_64px_rgba(0,0,0,0.72)] transition-colors duration-700 md:max-w-md md:rounded-2xl md:border ${panelBg} ${panelBorder} ${maxHeightClassName} ${panelClassName}`.trim()}
       >
         <div className="flex justify-center pt-2 md:hidden">
-          <span className="h-1 w-12 rounded-full bg-gold-200/45" aria-hidden />
+          <span className={`h-1 w-12 rounded-full transition-colors duration-700 ${handleColor}`} aria-hidden />
         </div>
 
-        <header className="flex items-center justify-between border-b border-gold-500/35 px-4 pb-2 pt-3 md:pb-3 md:pt-4">
-          <h3 className="w-full text-center font-display text-sm font-semibold uppercase tracking-[0.12em] text-gold-200">
+        <header className={`flex items-center justify-between border-b px-4 pb-2 pt-3 md:pb-3 md:pt-4 ${headerBorder}`}>
+          <h3 className={`w-full text-center font-display text-sm font-semibold uppercase tracking-[0.12em] ${titleColor}`}>
             {title}
           </h3>
           <button
             type="button"
             onClick={onClose}
             aria-label={closeLabel}
-            className="inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-gold-500/45 text-gold-100 transition hover:border-gold-300 hover:bg-gold-500/15"
+            className={`inline-flex h-8 w-8 shrink-0 items-center justify-center rounded-full border text-gold-100 transition ${closeBtnBorder}`}
           >
             <i className="fa-solid fa-xmark" aria-hidden />
           </button>
@@ -116,7 +129,7 @@ export function BottomSheet({
           </div>
         </div>
 
-        {footer ? <footer className="border-t border-gold-500/35 px-4 py-2 md:py-4">{footer}</footer> : null}
+        {footer ? <footer className={`border-t px-4 py-2 md:py-4 ${footerBorder}`}>{footer}</footer> : null}
       </section>
     </div>,
     document.body

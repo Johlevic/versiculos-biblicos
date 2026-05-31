@@ -37,7 +37,7 @@ const mobileFilterLabel = currentLang === "es" ? "Filtrar categorías" : "Filter
       type="button"
       id="refugio-mood-open"
       data-mood-open
-      class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold-500/45 bg-black/45 text-gold-200 ring-1 ring-inset ring-white/5 backdrop-blur-sm transition hover:border-gold-500/60 hover:bg-black/55"
+      class="focus-ring inline-flex h-10 w-10 items-center justify-center rounded-full border border-gold-500/45 bg-black/45 text-gold-200 ring-1 ring-inset ring-white/5 backdrop-blur-sm transition hover:border-gold-500/60 hover:bg-black/55"
       aria-label={moodLabel}
       aria-haspopup="dialog"
       aria-expanded="false"
@@ -59,7 +59,7 @@ const mobileFilterLabel = currentLang === "es" ? "Filtrar categorías" : "Filter
           <button
             type="button"
             data-mood-sheet-btn={m.id}
-            class={`mood-sheet-option relative flex min-h-11 items-center justify-between rounded-xl border px-3 py-2 text-left transition active:scale-[0.99] ${
+            class={`focus-ring mood-sheet-option relative flex min-h-11 items-center justify-between rounded-xl border px-3 py-2 text-left transition active:scale-[0.99] ${
               m.id === currentMood
                 ? "border-gold-400/70 bg-gold-500/18 text-gold-100"
                 : "border-gold-500/25 bg-white/[0.02] text-gold-100 hover:border-gold-500/40 hover:bg-white/[0.04]"
@@ -95,7 +95,7 @@ const mobileFilterLabel = currentLang === "es" ? "Filtrar categorías" : "Filter
             name="mood"
             value={m.id}
             data-mood-btn={m.id}
-            class="mood-pill inline-flex h-9 shrink-0 items-center gap-1 rounded-full border border-white/18 bg-black/15 px-3 text-[11px] font-medium text-gold-100/85 backdrop-blur-sm transition hover:border-gold-500/35 hover:bg-black/25 md:h-9 md:px-3.5 md:text-xs lg:h-10 lg:px-4 lg:text-[13px]"
+            class="focus-ring mood-pill inline-flex h-9 shrink-0 items-center gap-1 rounded-full border border-white/18 bg-black/15 px-3 text-[11px] font-medium text-gold-100/85 backdrop-blur-sm transition hover:border-gold-500/35 hover:bg-black/25 md:h-9 md:px-3.5 md:text-xs lg:h-10 lg:px-4 lg:text-[13px]"
           >
             <i class={`fa-solid ${m.icon} text-[0.7rem] opacity-90 md:text-xs`} aria-hidden="true" />
             {L[m.id]}

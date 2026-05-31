@@ -6,6 +6,7 @@ import SiteHeader from "@/components/celestial/SiteHeader.astro";
 import UrlParamsSync from "@/components/ui/UrlParamsSync.astro";
 import NotificationOptIn from "@/components/ui/NotificationOptIn.astro";
 import PwaInstallPrompt from "@/components/ui/PwaInstallPrompt.astro";
+import VisualSanctuarySwitcher from "@/components/celestial/VisualSanctuarySwitcher";
 import { VerseCard } from "@/components/verse/VerseCard";
 import { getSsgInitialVerse } from "@/lib/providers/verseServiceFactory";
 import type { Lang, Mood } from "@/lib/domain/types";
@@ -61,4 +62,5 @@ const year = new Date().getFullYear();
   <UrlParamsSync />
   <NotificationOptIn />
   <PwaInstallPrompt />
+  <VisualSanctuarySwitcher client:load />
 </BaseLayout>

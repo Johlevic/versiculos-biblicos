@@ -2,7 +2,10 @@ import { useState } from "react";
 import type { Lang } from "@/lib/domain/types";
 import { UI } from "@/lib/i18n/labels";
 import { showToast } from "@/lib/ui/toast";
-import { toBlob as htmlToImageBlob, toPng as htmlToImagePng } from "html-to-image";
+import {
+  toBlob as htmlToImageBlob,
+  toPng as htmlToImagePng,
+} from "html-to-image";
 import html2canvas from "html2canvas";
 
 type Props = {
@@ -59,19 +62,25 @@ function openImageForManualSave(url: string): boolean {
 
 function isLikelyIOS(): boolean {
   if (typeof navigator === "undefined") return false;
-  return /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
-    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+  return (
+    /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)
+  );
 }
 
 function isLikelyMobileDevice(): boolean {
   if (typeof navigator === "undefined") return false;
-  return /Android|iPhone|iPad|iPod|Mobi/i.test(navigator.userAgent) ||
-    navigator.maxTouchPoints > 1;
+  return (
+    /Android|iPhone|iPad|iPod|Mobi/i.test(navigator.userAgent) ||
+    navigator.maxTouchPoints > 1
+  );
 }
 
-async function canvasToPngBlob(canvas: HTMLCanvasElement): Promise<Blob | null> {
+async function canvasToPngBlob(
+  canvas: HTMLCanvasElement,
+): Promise<Blob | null> {
   const direct = await new Promise<Blob | null>((resolve) =>
-    canvas.toBlob((b) => resolve(b), "image/png", 1)
+    canvas.toBlob((b) => resolve(b), "image/png", 1),
   );
   if (direct) return direct;
 
@@ -110,7 +119,7 @@ function dataUrlToBlob(dataUrl: string): Blob | null {
 }
 
 export async function captureVerseBlobById(
-  captureElementId: string
+  captureElementId: string,
 ): Promise<Blob | null> {
   const el = document.getElementById(captureElementId);
   if (!el) return null;
@@ -124,12 +133,42 @@ export async function captureVerseBlobById(
     await document.fonts.ready;
   }
 
+  // Resolve background colour from active sanctuary theme
+  const sanctuaryTheme =
+    typeof window !== "undefined"
+      ? localStorage.getItem("refugio-sanctuary")
+      : null;
+  const isNature = sanctuaryTheme === "nature";
+  // Solid opaque background matching the active theme.
+  const captureBg = isNature ? "#0a1208" : "#0e0f1f";
+  // Subtle tinted overlay on top of the solid base (mimics the glass panel look).
+  const captureOverlay = isNature
+    ? "rgba(13, 26, 15, 0.85)"
+    : "rgba(18, 19, 42, 0.88)";
+
+  // ── Stamp a solid background onto the capture node temporarily ──────────
+  // This ensures the PNG has an opaque theme-coloured background regardless
+  // of which Tailwind opacity modifiers are active on the element.
+  const prevBg = node.style.backgroundColor;
+  const prevBorder = node.style.borderColor;
+  const prevBoxShadow = node.style.boxShadow;
+  node.style.backgroundColor = captureOverlay;
+  if (isNature) {
+    node.style.borderColor = "rgba(52, 211, 153, 0.2)";
+    node.style.boxShadow = "0 0 10px rgba(52, 211, 153, 0.08)";
+  } else {
+    node.style.borderColor = "rgba(212, 175, 55, 0.2)";
+    node.style.boxShadow = "0 0 10px rgba(212, 175, 55, 0.10)";
+  }
+
+  let blob: Blob | null = null;
+
   // Primary engine: html-to-image (worked better previously in this app).
   try {
     const common = {
       cacheBust: true,
       pixelRatio: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
-      backgroundColor: "#12132a",
+      backgroundColor: captureBg,
     };
     const runHtmlToImage = async (skipFonts: boolean): Promise<Blob | null> => {
       const opts = { ...common, skipFonts };
@@ -141,12 +180,13 @@ export async function captureVerseBlobById(
     };
 
     // First try: keep typography equal to screen by embedding fonts.
-    const firstBlob = await runHtmlToImage(false);
-    if (firstBlob) return firstBlob;
+    blob = await runHtmlToImage(false);
   } catch (err) {
     const msg = err instanceof Error ? err.message : String(err);
     const isRemoteCssSecurityError =
-      msg.includes("cssRules") || msg.includes("SecurityError") || msg.includes("Error inlining remote css file");
+      msg.includes("cssRules") ||
+      msg.includes("SecurityError") ||
+      msg.includes("Error inlining remote css file");
 
     // Google Fonts stylesheets can block cssRules access on some browsers; retry without reading remote font rules.
     if (isRemoteCssSecurityError) {
@@ -154,19 +194,20 @@ export async function captureVerseBlobById(
         const fallbackBlob = await htmlToImageBlob(node, {
           cacheBust: true,
           pixelRatio: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
-          backgroundColor: "#12132a",
+          backgroundColor: captureBg,
           skipFonts: true,
         });
-        if (fallbackBlob) return fallbackBlob;
-
-        const fallbackPng = await htmlToImagePng(node, {
-          cacheBust: true,
-          pixelRatio: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
-          backgroundColor: "#12132a",
-          skipFonts: true,
-        });
-        const fallbackDataBlob = dataUrlToBlob(fallbackPng);
-        if (fallbackDataBlob) return fallbackDataBlob;
+        if (fallbackBlob) {
+          blob = fallbackBlob;
+        } else {
+          const fallbackPng = await htmlToImagePng(node, {
+            cacheBust: true,
+            pixelRatio: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
+            backgroundColor: captureBg,
+            skipFonts: true,
+          });
+          blob = dataUrlToBlob(fallbackPng);
+        }
       } catch (retryErr) {
         console.warn("html-to-image fallback (skipFonts) failed", retryErr);
       }
@@ -176,24 +217,33 @@ export async function captureVerseBlobById(
   }
 
   // Secondary fallback: html2canvas.
-  try {
-    const canvas = await html2canvas(node, {
-      scale: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
-      backgroundColor: "#12132a",
-      useCORS: true,
-      allowTaint: false,
-      logging: false,
-    });
-    return await canvasToPngBlob(canvas);
-  } catch (err) {
-    console.warn("html2canvas fallback failed", err);
+  if (!blob) {
+    try {
+      const canvas = await html2canvas(node, {
+        scale: Math.min(2.2, (window.devicePixelRatio || 1) * 1.25),
+        backgroundColor: captureBg,
+        useCORS: true,
+        allowTaint: false,
+        logging: false,
+      });
+      blob = await canvasToPngBlob(canvas);
+    } catch (err) {
+      console.warn("html2canvas fallback failed", err);
+    }
   }
-  return null;
+
+  // ── Restore original inline styles ──────────────────────────────────────
+  node.style.backgroundColor = prevBg;
+  node.style.borderColor = prevBorder;
+  node.style.boxShadow = prevBoxShadow;
+
+  return blob;
 }
+
 
 export async function downloadVerseCaptureById(
   captureElementId: string,
-  filename = PNG_FILE
+  filename = PNG_FILE,
 ): Promise<boolean> {
   const blob = await captureVerseBlobById(captureElementId);
   if (!blob) return false;
@@ -248,14 +298,14 @@ export function DownloadButton({
     try {
       const ok = await downloadVerseCaptureById(
         captureElementId,
-        buildVerseImageFilename(verseRef)
+        buildVerseImageFilename(verseRef),
       );
       if (!ok) {
         showToast(
           lang === "es"
             ? "No se pudo generar la imagen."
             : "Could not generate image.",
-          "error"
+          "error",
         );
       }
     } catch {
@@ -263,7 +313,7 @@ export function DownloadButton({
         lang === "es"
           ? "Falló la descarga de la imagen. Intenta nuevamente."
           : "Image download failed. Please try again.",
-        "error"
+        "error",
       );
     } finally {
       setBusy(false);
@@ -279,7 +329,7 @@ export function DownloadButton({
       disabled={d}
       aria-label={L.download}
       title={L.download}
-      className={`inline-flex items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-sm font-semibold text-gold-200/90 transition hover:border-gold-500/50 hover:bg-gold-500/10 disabled:cursor-wait disabled:opacity-60 ${
+      className={`focus-ring inline-flex items-center justify-center rounded-full border border-gold-500/30 bg-gold-500/5 text-sm font-semibold text-gold-200/90 transition hover:border-gold-500/50 hover:bg-gold-500/10 disabled:cursor-wait disabled:opacity-60 ${
         iconOnlyMobile ? "min-h-10 min-w-10 p-0" : "min-h-11 gap-2 px-4 py-2.5"
       } ${className}`.trim()}
     >
@@ -293,10 +343,7 @@ export function DownloadButton({
           viewBox="0 0 24 24"
           aria-hidden
         >
-          <path
-            fill="#f5e206"
-            d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z"
-          />
+          <path fill="#f5e206" d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z" />
         </svg>
       ) : (
         <i className="fa-solid fa-image" aria-hidden />

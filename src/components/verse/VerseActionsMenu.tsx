@@ -9,6 +9,13 @@ import {
 import { showToast } from "@/lib/ui/toast";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 
+type SanctuaryTheme = "celestial" | "nature";
+
+function readSanctuaryTheme(): SanctuaryTheme {
+  if (typeof window === "undefined") return "celestial";
+  return localStorage.getItem("refugio-sanctuary") === "nature" ? "nature" : "celestial";
+}
+
 type Props = {
   captureElementId: string;
   lang: Lang;
@@ -36,6 +43,28 @@ export function VerseActionsMenu({
   const [hAlign, setHAlign] = useState<"open-left" | "open-right">("open-left");
   const [vAlign, setVAlign] = useState<"up" | "down">("down");
   const [isMobile, setIsMobile] = useState(false);
+  const [canCopyImage, setCanCopyImage] = useState(false);
+  const [sanctuary, setSanctuary] = useState<SanctuaryTheme>("celestial");
+
+  useEffect(() => {
+    setSanctuary(readSanctuaryTheme());
+    const handler = (e: Event) => {
+      const theme = (e as CustomEvent<{ theme: SanctuaryTheme }>).detail?.theme;
+      if (theme === "celestial" || theme === "nature") setSanctuary(theme);
+    };
+    window.addEventListener("refugio-sanctuary-changed", handler);
+    return () => window.removeEventListener("refugio-sanctuary-changed", handler);
+  }, []);
+
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      navigator.clipboard &&
+      typeof window.ClipboardItem !== "undefined"
+    ) {
+      setCanCopyImage(true);
+    }
+  }, []);
 
   const t = useMemo(
     () =>
@@ -44,6 +73,7 @@ export function VerseActionsMenu({
             actions: "Acciones del versículo",
             share: "Compartir",
             download: "Descargar PNG",
+            copyImage: "Copiar imagen",
             copy: "Copiar texto",
             close: "Cerrar",
           }
@@ -51,10 +81,11 @@ export function VerseActionsMenu({
             actions: "Verse actions",
             share: "Share",
             download: "Download PNG",
+            copyImage: "Copy image",
             copy: "Copy text",
             close: "Close",
           },
-    [lang]
+    [lang],
   );
 
   const shareText = `“${verseText}” — ${verseRef}`;
@@ -92,7 +123,9 @@ export function VerseActionsMenu({
 
     // Prefer opening to the left side when there is room (safer near right edge).
     setHAlign(spaceLeft >= pr.width ? "open-left" : "open-right");
-    setVAlign(spaceBottom >= pr.height || spaceBottom >= spaceTop ? "down" : "up");
+    setVAlign(
+      spaceBottom >= pr.height || spaceBottom >= spaceTop ? "down" : "up",
+    );
   }, [open]);
 
   const copyVerse = async () => {
@@ -135,7 +168,7 @@ export function VerseActionsMenu({
             ? "Texto copiado para compartir."
             : "Text copied for sharing.",
           "success",
-          2200
+          2200,
         );
       }
       setOpen(false);
@@ -144,7 +177,7 @@ export function VerseActionsMenu({
         lang === "es"
           ? "No se pudo compartir. Intenta otra opción."
           : "Could not share. Try another option.",
-        "error"
+        "error",
       );
     } finally {
       setBusy(false);
@@ -163,8 +196,7 @@ export function VerseActionsMenu({
     let progressUiShown = false;
     let progressTimer = 0;
 
-    const successMsg =
-      lang === "es" ? "Imagen descargada." : "Image saved.";
+    const successMsg = lang === "es" ? "Imagen descargada." : "Image saved.";
 
     const showModalTimer = window.setTimeout(() => {
       if (downloadFinished) return;
@@ -172,14 +204,16 @@ export function VerseActionsMenu({
       setShowDownloadModal(true);
       setDownloadProgress(1);
       progressTimer = window.setInterval(() => {
-        setDownloadProgress((p) => (p < 92 ? p + Math.max(1, Math.round((92 - p) * 0.08)) : p));
+        setDownloadProgress((p) =>
+          p < 92 ? p + Math.max(1, Math.round((92 - p) * 0.08)) : p,
+        );
       }, 120);
     }, DOWNLOAD_MODAL_DELAY_MS);
 
     try {
       const ok = await downloadVerseCaptureById(
         captureElementId,
-        buildVerseImageFilename(verseRef)
+        buildVerseImageFilename(verseRef),
       );
       downloadFinished = true;
       window.clearTimeout(showModalTimer);
@@ -194,7 +228,7 @@ export function VerseActionsMenu({
           lang === "es"
             ? "No se pudo generar la imagen."
             : "Could not generate image.",
-          "error"
+          "error",
         );
       } else {
         if (progressUiShown) {
@@ -225,7 +259,7 @@ export function VerseActionsMenu({
         lang === "es"
           ? "Falló la descarga de la imagen."
           : "Image download failed.",
-        "error"
+        "error",
       );
     } finally {
       if (progressTimer) window.clearInterval(progressTimer);
@@ -238,17 +272,56 @@ export function VerseActionsMenu({
     try {
       await copyVerse();
       showToast(
-        lang === "es" ? "Texto copiado al portapapeles." : "Text copied to clipboard.",
+        lang === "es"
+          ? "Texto copiado al portapapeles."
+          : "Text copied to clipboard.",
         "success",
-        2200
+        2200,
       );
       setOpen(false);
     } catch {
       showToast(
+        lang === "es" ? "No se pudo copiar el texto." : "Could not copy text.",
+        "error",
+      );
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const onCopyImage = async () => {
+    setBusy(true);
+    try {
+      const blob = await captureVerseBlobById(captureElementId);
+      if (!blob) {
+        showToast(
+          lang === "es"
+            ? "No se pudo generar la imagen."
+            : "Could not generate image.",
+          "error",
+        );
+        return;
+      }
+      await navigator.clipboard.write([
+        new ClipboardItem({
+          [blob.type]: blob,
+        }),
+      ]);
+      showToast(
         lang === "es"
-          ? "No se pudo copiar el texto."
-          : "Could not copy text.",
-        "error"
+          ? "Imagen copiada al portapapeles."
+          : "Image copied to clipboard.",
+        "success",
+        2200,
+      );
+      setOpen(false);
+    } catch (err) {
+      console.warn("Failed to copy image to clipboard:", err);
+      showToast(
+        lang === "es"
+          ? "No se pudo copiar la imagen al portapapeles."
+          : "Could not copy image to clipboard.",
+        "error",
       );
     } finally {
       setBusy(false);
@@ -256,6 +329,23 @@ export function VerseActionsMenu({
   };
 
   const d = Boolean(disabled || busy);
+
+  // ── Theme-derived classes ──────────────────────────────────────────────
+  const isNature = sanctuary === "nature";
+  const dropdownBg = isNature
+    ? "border-emerald-500/30 bg-[#081208]/95"
+    : "border-gold-500/35 bg-[#0f1228]/95";
+  const dropdownItemHover = isNature ? "hover:bg-emerald-500/10" : "hover:bg-gold-500/10";
+  const dropdownIconColor = isNature ? "text-emerald-300/90" : "text-gold-300/90";
+  const sheetItemBorder = isNature
+    ? "border-emerald-500/25 bg-emerald-500/5 hover:bg-emerald-500/10"
+    : "border-gold-500/30 bg-gold-500/5 hover:bg-gold-500/10";
+  const modalBg = isNature
+    ? "border-emerald-500/25 bg-[#081208]/95"
+    : "border-gold-500/30 bg-[#0f1228]/95";
+  const progressBar = isNature
+    ? "from-emerald-400 to-emerald-200"
+    : "from-gold-400 to-gold-200";
 
   return (
     <div ref={boxRef} className={`relative ${className}`.trim()}>
@@ -267,7 +357,7 @@ export function VerseActionsMenu({
         aria-haspopup="menu"
         aria-label={t.actions}
         title={t.actions}
-        className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-gold-500/55 bg-[#1e1508]/95 p-0 text-gold-300 shadow-[0_0_14px_rgba(212,175,55,0.28)] transition hover:border-gold-400 hover:bg-[#2d1f0d] disabled:cursor-wait disabled:opacity-60"
+        className="focus-ring inline-flex min-h-10 min-w-10 items-center justify-center rounded-full border border-gold-500/55 bg-[#1e1508]/95 p-0 text-gold-300 shadow-[0_0_14px_rgba(212,175,55,0.28)] transition hover:border-gold-400 hover:bg-[#2d1f0d] disabled:cursor-wait disabled:opacity-60"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -288,8 +378,10 @@ export function VerseActionsMenu({
         <div
           ref={panelRef}
           role="menu"
-          className={`absolute z-30 hidden min-w-[10.5rem] max-w-[calc(100vw-1rem)] rounded-xl border border-gold-500/35 bg-[#0f1228]/95 p-1.5 shadow-[0_0_18px_rgba(0,0,0,0.45)] backdrop-blur-sm md:block ${
-            hAlign === "open-left" ? "md:right-0 md:left-auto" : "md:left-0 md:right-auto"
+          className={`absolute z-30 hidden min-w-[10.5rem] max-w-[calc(100vw-1rem)] rounded-xl border p-1.5 shadow-[0_0_18px_rgba(0,0,0,0.45)] backdrop-blur-sm transition-colors duration-700 md:block ${dropdownBg} ${
+            hAlign === "open-left"
+              ? "md:right-0 md:left-auto"
+              : "md:left-0 md:right-auto"
           } ${vAlign === "down" ? "top-12" : "bottom-12"}`}
         >
           <button
@@ -297,9 +389,9 @@ export function VerseActionsMenu({
             role="menuitem"
             onClick={onShare}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition disabled:opacity-60 ${dropdownItemHover}`}
           >
-            <i className="fa-solid fa-share-nodes w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-share-nodes w-4 ${dropdownIconColor}`} aria-hidden />
             {t.share}
           </button>
           <button
@@ -307,19 +399,31 @@ export function VerseActionsMenu({
             role="menuitem"
             onClick={onDownload}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition disabled:opacity-60 ${dropdownItemHover}`}
           >
-            <i className="fa-solid fa-download w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-download w-4 ${dropdownIconColor}`} aria-hidden />
             {t.download}
           </button>
+          {canCopyImage ? (
+            <button
+              type="button"
+              role="menuitem"
+              onClick={onCopyImage}
+              disabled={d}
+              className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition disabled:opacity-60 ${dropdownItemHover}`}
+            >
+              <i className={`fa-solid fa-file-image w-4 ${dropdownIconColor}`} aria-hidden />
+              {t.copyImage}
+            </button>
+          ) : null}
           <button
             type="button"
             role="menuitem"
             onClick={onCopy}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-lg px-2.5 py-2 text-left text-xs font-medium text-gold-100/95 transition disabled:opacity-60 ${dropdownItemHover}`}
           >
-            <i className="fa-solid fa-copy w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-copy w-4 ${dropdownIconColor}`} aria-hidden />
             {t.copy}
           </button>
         </div>
@@ -330,6 +434,7 @@ export function VerseActionsMenu({
         onClose={() => setOpen(false)}
         closeLabel={t.close}
         maxHeightClassName="max-h-[68dvh] md:max-h-[82vh]"
+        sanctuary={sanctuary}
       >
         <div className="w-[calc(100vw-2.5rem)] max-w-[28rem] space-y-2">
           <button
@@ -337,9 +442,9 @@ export function VerseActionsMenu({
             role="menuitem"
             onClick={onShare}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-xl border border-gold-500/30 bg-gold-500/5 px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-xl border px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition disabled:opacity-60 ${sheetItemBorder}`}
           >
-            <i className="fa-solid fa-share-nodes w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-share-nodes w-4 ${dropdownIconColor}`} aria-hidden />
             {t.share}
           </button>
           <button
@@ -347,19 +452,31 @@ export function VerseActionsMenu({
             role="menuitem"
             onClick={onDownload}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-xl border border-gold-500/30 bg-gold-500/5 px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-xl border px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition disabled:opacity-60 ${sheetItemBorder}`}
           >
-            <i className="fa-solid fa-download w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-download w-4 ${dropdownIconColor}`} aria-hidden />
             {t.download}
           </button>
+          {canCopyImage ? (
+            <button
+              type="button"
+              role="menuitem"
+              onClick={onCopyImage}
+              disabled={d}
+              className={`flex w-full items-center gap-2 rounded-xl border px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition disabled:opacity-60 ${sheetItemBorder}`}
+            >
+              <i className={`fa-solid fa-file-image w-4 ${dropdownIconColor}`} aria-hidden />
+              {t.copyImage}
+            </button>
+          ) : null}
           <button
             type="button"
             role="menuitem"
             onClick={onCopy}
             disabled={d}
-            className="flex w-full items-center gap-2 rounded-xl border border-gold-500/30 bg-gold-500/5 px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition hover:bg-gold-500/10 disabled:opacity-60"
+            className={`flex w-full items-center gap-2 rounded-xl border px-4 py-4 text-left text-sm font-medium text-gold-100/95 transition disabled:opacity-60 ${sheetItemBorder}`}
           >
-            <i className="fa-solid fa-copy w-4 text-gold-300/90" aria-hidden />
+            <i className={`fa-solid fa-copy w-4 ${dropdownIconColor}`} aria-hidden />
             {t.copy}
           </button>
         </div>
@@ -368,24 +485,34 @@ export function VerseActionsMenu({
       {showDownloadModal && typeof document !== "undefined"
         ? createPortal(
             <div className="fixed inset-0 z-[120] flex items-center justify-center bg-black/55 px-4 backdrop-blur-[1px]">
-              <div className="w-full max-w-xs rounded-2xl border border-gold-500/30 bg-[#0f1228]/95 p-4 text-gold-100 shadow-[0_14px_40px_rgba(0,0,0,0.5)]">
+              <div className={`w-full max-w-xs rounded-2xl border p-4 text-gold-100 shadow-[0_14px_40px_rgba(0,0,0,0.5)] transition-colors duration-700 ${modalBg}`}>
                 <p className="text-center text-sm font-semibold">
-                  {lang === "es" ? "Descargando imagen..." : "Downloading image..."}
+                  {lang === "es"
+                    ? "Descargando imagen..."
+                    : "Downloading image..."}
                 </p>
 
                 {!downloadDone ? (
                   <>
                     <div className="mt-3 h-2 w-full overflow-hidden rounded-full bg-white/10">
                       <div
-                        className="h-full rounded-full bg-gradient-to-r from-gold-400 to-gold-200 transition-all duration-150"
+                        className={`h-full rounded-full bg-gradient-to-r transition-all duration-150 ${progressBar}`}
                         style={{ width: `${Math.max(2, downloadProgress)}%` }}
                       />
                     </div>
-                    <p className="mt-2 text-center text-xs text-gold-200/85">{downloadProgress}%</p>
+                    <p className="mt-2 text-center text-xs text-gold-200/85">
+                      {downloadProgress}%
+                    </p>
                   </>
                 ) : (
                   <div className="mt-3 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" aria-hidden>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="26"
+                      height="26"
+                      viewBox="0 0 24 24"
+                      aria-hidden
+                    >
                       <path
                         fill="#06f520"
                         d="m10.6 13.8l-2.15-2.15q-.275-.275-.7-.275t-.7.275t-.275.7t.275.7L9.9 15.9q.3.3.7.3t.7-.3l5.65-5.65q.275-.275.275-.7t-.275-.7t-.7-.275t-.7.275zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
@@ -395,7 +522,7 @@ export function VerseActionsMenu({
                 )}
               </div>
             </div>,
-            document.body
+            document.body,
           )
         : null}
     </div>
